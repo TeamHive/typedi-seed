@@ -1,0 +1,8 @@
+node_modules
+dist
+local*.yml
+*.csv
+.DS_STORE
+couch
+coverage
+.nyc_output

@@ -1,0 +1,56 @@
+{
+  "name": "typedi-seed",
+  "version": "1.0.0",
+  "description": "Ths is out integration between MSSQL and CouchDB for the Caregiver App",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc  -r lcov -e .ts -x \"*.spec.ts\" jasmine-ts \"src/**/*.spec.ts\"",
+    "test:debug": "node --inspect-brk=5858 node_modules/.bin/jasmine-ts \"src/**/*.spec.ts\"",
+    "prestart": "npm run compile",
+    "start": "gulp start",
+    "start:debug": "npm run compile && nodemon --inspect-brk=5858 dist/index.js",
+    "compile": "npm run clear && tsc",
+    "clear": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamMaestro/typedi-seed.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "JavaScript",
+    "TypeDI"
+  ],
+  "contributors": [
+    "John Pinkster <jpinkster>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamMaestro/typedi-seed/issues"
+  },
+  "homepage": "https://github.com/TeamMaestro/typedi-seed#readme",
+  "dependencies": {
+    "config": "^1.29.2",
+    "js-yaml": "^3.10.0",
+    "json2csv": "^3.11.5",
+    "log4js": "^2.5.2",
+    "raven": "^2.3.0",
+    "reflect-metadata": "^0.1.12",
+    "tedious": "^2.1.5",
+    "typedi": "0.6.0"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.33",
+    "@types/jasmine": "^2.8.5",
+    "@types/node": "^9.3.0",
+    "@types/raven": "^2.1.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^4.0.0-alpha.1",
+    "jasmine-ts": "^0.2.1",
+    "nyc": "^11.4.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  }
+}
