@@ -37,7 +37,7 @@
     "raven": "^2.3.0",
     "reflect-metadata": "^0.1.12",
     "tedious": "^2.1.5",
-    "typedi": "0.6.0"
+    "typedi": "^0.6.0"
   },
   "devDependencies": {
     "@types/config": "0.0.33",
