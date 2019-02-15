@@ -1,8 +1,18 @@
 logger:
     level: debug
 
-request:
-    fetchUsers: https://jsonplaceholder.typicode.com/users
+database:
+    dialect: 'postgres'
+    host: 'localhost'
+    port: 5432
+    database: 'DBNAME'
 
-csv:
-    fileOutput: 'users.csv'
+email:
+    noReplyEmailAddress: 'dev@meetmaestro.com'
+    sendTo: ['placeholder@placeholder.com']
+    send: true
+    sendgrid:
+        apiKey: 'PLACEHOLDER'
+
+raven:
+    dsn: ''
