@@ -1,6 +1,6 @@
+import { ErrorHandler } from '@teamhive/typedi-common';
 import { Service } from 'typedi';
 import { EmailService } from './common/email/services/email/email.service';
-import { ErrorHandler } from './common/error/services/error-handler/error-handler.service';
 
 @Service()
 export class AppService {
