@@ -1,5 +1,5 @@
-# logger:
-#     level: debug
+logger:
+    level: debug
 
 database:
     dialect: 'postgres'
