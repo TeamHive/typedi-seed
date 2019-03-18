@@ -1,18 +1,5 @@
 logger:
     level: debug
 
-database:
-    dialect: 'postgres'
-    host: 'localhost'
-    port: 5432
-    database: 'DBNAME'
-
-email:
-    noReplyEmailAddress: 'dev@meetmaestro.com'
-    sendTo: ['placeholder@placeholder.com']
-    send: true
-    sendgrid:
-        apiKey: 'PLACEHOLDER'
-
 raven:
     dsn: ''

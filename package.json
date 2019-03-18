@@ -33,20 +33,14 @@
     "dependencies": {
         "@teamhive/typedi-common": "0.0.1",
         "config": "^3.0.1",
-        "email-templates": "^5.0.0",
         "log4js": "^4.0.2",
-        "nodemailer": "^5.1.1",
-        "nodemailer-sendgrid": "^1.0.3",
-        "pug": "^2.0.3",
         "raven": "^2.3.0",
         "reflect-metadata": "^0.1.12",
         "typedi": "^0.8.0"
     },
     "devDependencies": {
         "@types/config": "0.0.34",
-        "@types/email-templates": "^3.5.0",
         "@types/node": "^11.9.4",
-        "@types/nodemailer": "^4.6.6",
         "@types/raven": "^2.1.4",
         "gulp": "^3.9.1",
         "gulp-nodemon": "^2.2.1",
