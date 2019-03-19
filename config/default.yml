@@ -1,8 +1,5 @@
 logger:
     level: debug
 
-request:
-    fetchUsers: https://jsonplaceholder.typicode.com/users
-
-csv:
-    fileOutput: 'users.csv'
+raven:
+    dsn: ''
