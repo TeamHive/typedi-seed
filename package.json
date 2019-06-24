@@ -4,13 +4,16 @@
     "description": "This is the typedi-seed for Team Hive",
     "main": "index.js",
     "scripts": {
-        "test": "nyc  -r lcov -e .ts -x \"*.spec.ts\" jasmine-ts \"src/**/*.spec.ts\"",
-        "test:debug": "node --inspect-brk=5858 node_modules/.bin/jasmine-ts \"src/**/*.spec.ts\"",
-        "prestart": "npm run compile",
-        "start": "gulp start",
-        "start:debug": "npm run compile && nodemon --inspect-brk=5858 dist/index.js",
-        "compile": "npm run clear && tsc",
-        "clear": "rm -rf dist"
+        "compile": "npm-run-all clear build",
+        "clear": "rm -rf dist",
+        "build": "tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "prestart": "npm-run-all clear lint build",
+        "start": "npm-run-all --parallel watch:project watch:start",
+        "start:debug": "npm-run-all --parallel watch:project watch:debug",
+        "watch:start": "nodemon './dist/index.js' --watch './dist'",
+        "watch:project": "chokidar src/ src/**/ -c \"npm run lint && npm run build\"",
+        "watch:debug": "nodemon --inspect-brk=5858 './dist/index.js' --watch './dist'"
     },
     "repository": {
         "type": "git",
@@ -32,22 +35,21 @@
     "homepage": "https://github.com/TeamHive/typedi-seed#readme",
     "dependencies": {
         "@teamhive/typedi-common": "1.0.0",
-        "config": "^3.0.1",
-        "log4js": "^4.0.2",
-        "raven": "^2.3.0",
-        "reflect-metadata": "^0.1.12",
+        "config": "^3.1.0",
+        "log4js": "^4.3.2",
+        "raven": "^2.6.4",
+        "reflect-metadata": "^0.1.13",
         "typedi": "^0.8.0"
     },
     "devDependencies": {
         "@types/config": "0.0.34",
-        "@types/node": "^11.9.4",
-        "@types/raven": "^2.1.4",
-        "gulp": "^3.9.1",
-        "gulp-nodemon": "^2.2.1",
-        "gulp-tslint": "^8.1.2",
-        "gulp-typescript": "^5.0.0-alpha.3",
-        "nyc": "^13.0.1",
-        "tslint": "^5.9.1",
-        "typescript": "^3.0.3"
+        "@types/node": "^12.0.10",
+        "@types/raven": "^2.5.3",
+        "chokidar": "^3.0.1",
+        "chokidar-cli": "^1.2.2",
+        "nodemon": "^1.19.1",
+        "npm-run-all": "^4.1.5",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.2"
     }
 }
