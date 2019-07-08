@@ -11,9 +11,9 @@
         "prestart": "npm-run-all clear lint build",
         "start": "npm-run-all --parallel watch:project watch:start",
         "start:debug": "npm-run-all --parallel watch:project watch:debug",
-        "watch:start": "nodemon './dist/index.js' --watch './dist'",
+        "watch:start": "nodemon './index.js' --watch './dist'",
         "watch:project": "chokidar src/ src/**/ -c \"npm run lint && npm run build\"",
-        "watch:debug": "nodemon --inspect-brk=5858 './dist/index.js' --watch './dist'"
+        "watch:debug": "npm run prestart && nodemon --inspect-brk=5858 './index.js' --watch './dist'"
     },
     "repository": {
         "type": "git",
