@@ -1,3 +1,4 @@
+import NodeEventHandler from '@teamhive/node-event-handler';
 import { ErrorHandler } from '@teamhive/typedi-common';
 import { Service } from 'typedi';
 
@@ -5,10 +6,14 @@ import { Service } from 'typedi';
 export class AppService {
     constructor(
         private readonly errorHandler: ErrorHandler
-    ) {}
+    ) { }
 
     async run() {
         try {
+            // handle uncaught exceptions
+            NodeEventHandler.handleUnhandledRejection(this.errorHandler);
+            NodeEventHandler.handleUncaughtException(this.errorHandler);
+
             const startTime = Date.now();
             this.errorHandler.captureBreadcrumb({ message: 'Running TypeDi Seed...' });
 
