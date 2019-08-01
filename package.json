@@ -36,7 +36,7 @@
     "dependencies": {
         "@teamhive/node-event-handler": "^1.0.0",
         "@teamhive/typedi-common": "^2.0.0",
-        "config": "^3.1.0",
+        "config": "^3.2.2",
         "log4js": "^4.3.2",
         "raven": "^2.6.4",
         "reflect-metadata": "^0.1.13",
